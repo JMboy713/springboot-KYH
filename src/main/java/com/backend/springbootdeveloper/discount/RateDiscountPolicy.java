@@ -4,7 +4,7 @@ import com.backend.springbootdeveloper.member.Grade;
 import com.backend.springbootdeveloper.member.Member;
 
 public class RateDiscountPolicy implements DiscountPolicy{
-    private int discountPercent = 10;
+    private int discountPercent = 20;
     @Override
     public int discount(Member member, int price) {
         if (member.getGrade()== Grade.VIP){
