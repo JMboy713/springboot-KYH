@@ -11,16 +11,21 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+    // @Bean -> memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemberRepository -> new MemoryMemberRepository()
     @Bean
     public MemberService memberService(){
+        System.out.println("call Appconfig.memberService");
         return new MemberServiceImpl(memberRepository()); // 생성자 주입. 생성자를 통해서 뭐가 들어갈지 정해줌.
     }
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call Appconfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService(){
+        System.out.println("call Appconfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
