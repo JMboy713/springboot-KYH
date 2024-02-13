@@ -27,7 +27,7 @@ public class ApplicationContextInfoTest {
             // Role ROLE_APPLICATION : 직접 등록한 애플리케이션 빈
             // Role Role_INFRASTRUCTURE : 스프링이 내부에서 사용하는 빈
 
-            if (beanDefinition.getRole()== BeanDefinition.ROLE_APPLICATION){
+            if (beanDefinition.getRole()== BeanDefinition.ROLE_APPLICATION){ // 애플리케이션 등록하기 위해 작성한 빈.
                 Object bean = ac.getBean(beanDefinitionName);
                 System.out.println("name = "+beanDefinitionName+" object = "+bean);
             }
