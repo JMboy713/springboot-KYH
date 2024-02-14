@@ -6,7 +6,10 @@ import com.backend.springbootdeveloper.discount.RateDiscountPolicy;
 import com.backend.springbootdeveloper.member.Member;
 import com.backend.springbootdeveloper.member.MemberRepository;
 import com.backend.springbootdeveloper.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     /*private final MemberRepository memberRepository = new MemoryMemberRepository();// 멤버 변수
     // private final DiscountPolicy discountPolicy = new FixDiscountPolicy();// 고정 할인 정책
@@ -16,7 +19,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
